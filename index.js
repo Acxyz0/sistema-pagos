@@ -10,7 +10,7 @@ app.listen(port, () => {
   console.log(`El servidor esta corriendo en el servidor ${port}`);
 });
 
-// Habilitar Pug
+// Habilitar Pug 
 app.set("view engine", "pug");
 app.set("views", "./views");
 
