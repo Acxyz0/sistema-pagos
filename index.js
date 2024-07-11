@@ -3,6 +3,7 @@ import estudiantesRoutes from "./routes/estudiantesRoutes.js";
 
 const app = express();
 
+
 // Configuracion del servidor
 const port = 4000;
 app.listen(port, () => {
