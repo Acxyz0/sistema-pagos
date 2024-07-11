@@ -14,7 +14,7 @@ app.listen(port, () => {
 app.set("view engine", "pug");
 app.set("views", "./views");
 
-// Carpeta publica
+// Carpeta publica 
 app.use(express.static("public"));
 
 // ROUTING
