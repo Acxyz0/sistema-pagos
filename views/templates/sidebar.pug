@@ -1,0 +1,102 @@
+.block
+    div(class="bg-slate-800 text-gray-100 w-64 flex flex-col h-screen")
+        div(class="p-4 font-bold text-lg") Logo
+        nav(class="flex-1 overflow-y-auto")
+            ul
+                //- Inicio
+                li(class="px-4 py-4 border-b border-gray-700 hover:bg-gray-700 transition duration-300 ease-in-out")
+                    a(href="/inicio" class="block")
+                        i(class="fas fa-home mr-2")
+                        span Inicio
+                //- Estudiantes
+                li(class="px-4 py-4 border-b border-gray-700 transition duration-300 ease-in-out")
+                    div(class="flex items-center justify-between")
+                        div
+                            i(class="fas fa-users mr-2")
+                            span Estudiantes
+                        i(class="fas fa-chevron-down submenu-toggle cursor-pointer")
+                    div(class="submenu hidden")
+                        a(href="#" class="block px-4 py-4 hover:bg-gray-700 transition duration-300 ease-in-out")
+                            i(class="fas fa-tasks mr-2")
+                            span Ver Estudiantes
+                        a(href="#" class="block px-4 py-4 hover:bg-gray-700 transition duration-300 ease-in-out")
+                            i(class="fas fa-plus mr-2")
+                            span Inscribir Estudiante
+                //- Pagos
+                li(class="px-4 py-4 border-b border-gray-700 transition duration-300 ease-in-out")
+                    div(class="flex items-center justify-between")
+                        div
+                            i(class="fas fa-money-bill mr-2")
+                            span Pagos
+                        i(class="fas fa-chevron-down submenu-toggle cursor-pointer")
+                    div(class="submenu hidden")
+                        a(href="#" class="block px-4 py-4 hover:bg-gray-700 transition duration-300 ease-in-out")
+                            i(class="fas fa-tasks mr-2")
+                            span Administrar Pagos
+                        a(href="#" class="block px-4 py-4 hover:bg-gray-700 transition duration-300 ease-in-out")
+                            i(class="fas fa-plus mr-2")
+                            span Nuevo Pago
+                //- Mantenimientos
+                li(class="px-4 py-4 border-b border-gray-700 transition duration-300 ease-in-out")
+                    div(class="flex items-center justify-between")
+                        div
+                            i(class="fas fa-square-plus mr-2")
+                            span Mantenimientos
+                        i(class="fas fa-chevron-down submenu-toggle cursor-pointer")
+                    div(class="submenu hidden")
+                        a(href="/marks" class="block px-4 py-4 hover:bg-gray-700 transition duration-300 ease-in-out")
+                            i(class="fas fa-tag mr-2")
+                            span Cursos
+                        a(href="/categories" class="block px-4 py-4 hover:bg-gray-700 transition duration-300 ease-in-out")
+                            i(class="fas fa-list mr-2")
+                            span Grados
+                        a(href="/colors" class="block px-4 py-4 hover:bg-gray-700 transition duration-300 ease-in-out")
+                            i(class="fas fa-palette mr-2")
+                            span Carrera
+                //- Notas
+                li(class="px-4 py-4 border-b border-gray-700 hover:bg-gray-700 transition duration-300 ease-in-out")
+                    a(href="#" class="block")
+                        i(class="fas fa-file-lines mr-2")
+                        span Notas
+                //- Reportes
+                li(class="px-4 py-4 border-b border-gray-700 hover:bg-gray-700 transition duration-300 ease-in-out")
+                    a(href="#" class="block")
+                        i(class="fas fa-file mr-2")
+                        span Reportes
+                //- Configuración
+                li(class="px-4 py-4 border-b border-gray-700 hover:bg-gray-700 transition duration-300 ease-in-out")
+                    a(href="#" class="block")
+                        i(class="fas fa-gear mr-2")
+                        span Configuración
+
+script.
+  document.addEventListener('DOMContentLoaded', function() {
+    const submenus = document.querySelectorAll('.submenu');
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+    submenuToggles.forEach((toggle, index) => {
+      let submenuOpen = false;
+
+      toggle.addEventListener('click', () => {
+        const submenu = submenus[index];
+        submenuToggles.forEach(otherToggle => {
+          otherToggle.classList.remove('fa-chevron-up');
+          otherToggle.classList.add('fa-chevron-down');
+        });
+
+        submenus.forEach(menu => menu.classList.add('hidden'));
+
+        if (submenuOpen) {
+          submenu.classList.add('hidden');
+          toggle.classList.remove('fa-chevron-up');
+          toggle.classList.add('fa-chevron-down');
+        } else {
+          submenu.classList.remove('hidden');
+          toggle.classList.remove('fa-chevron-down');
+          toggle.classList.add('fa-chevron-up');
+        }
+
+        submenuOpen = !submenuOpen;
+      });
+    });
+  });
