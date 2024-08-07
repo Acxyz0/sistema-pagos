@@ -7,6 +7,6 @@ const router = express.Router();
 router.get("", estudiantes);
 
 // Mostrar estudiante por ID
-router.get("/estudiante/:id", )
+router.get("/:id", )
 
 export default router;

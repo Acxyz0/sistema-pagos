@@ -1,0 +1,24 @@
+extends ../../../layouts/index
+
+block contenido
+    div.flex.justify-center.items-center.h-auto
+        div(class="w-3/5").bg-white.rounded-xl.p-5
+            h1.text-center.font-bold.text-2xl.pb-3.uppercase=titulo
+            a(href="/cursos/create" class="hover:bg-slate-600 hover:rounded-lg hover:shadow-md hover:shadow-gray-400").bg-slate-700.text-white.py-2.px-2.transition-all.ease-in.duration-300
+                i.fas.fa-plus.mr-2
+                span Crear Curso
+            
+            div(class="h-3/4").mt-4.overflow-y-auto
+                table.w-full
+                    thead.bg-slate-600.h-12.sticky.top-0
+                        tr.text-white
+                            th Nombre
+                            th Acciones
+                    tbody
+                        tr.h-12.border-b.border-gray-400.text-lg
+                            td.pl-5 curso
+                            td.text-center.space-x-2
+                                a(href=`` class="hover:bg-amber-400 hover:shadow-md").bg-yellow-500.text-white.py-2.px-4.rounded-lg.transition-all.ease-in.duration-300
+                                    i.fa-solid.fa-edit
+                                a(href=`` class="hover:bg-red-600 hover:shadow-md").bg-red-700.text-white.py-2.px-4.rounded-lg.transition-all.ease-in.duration-300
+                                    i.fa-solid.fa-trash
